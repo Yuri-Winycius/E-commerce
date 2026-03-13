@@ -6,7 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,13 +19,13 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)
-    private String senha;
+    private String password;
 
     private LocalDateTime dataCriacao;
 
