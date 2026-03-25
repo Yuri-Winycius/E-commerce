@@ -1,6 +1,6 @@
-package com.winy.e_commerce.ifrastructure.repositories;
+package com.winy.e_commerce.infrastructure.repositories;
 
-import com.winy.e_commerce.ifrastructure.entities.UserEntity;
+import com.winy.e_commerce.infrastructure.entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {

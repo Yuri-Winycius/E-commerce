@@ -1,4 +1,4 @@
-package com.winy.e_commerce.ifrastructure.entities;
+package com.winy.e_commerce.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
