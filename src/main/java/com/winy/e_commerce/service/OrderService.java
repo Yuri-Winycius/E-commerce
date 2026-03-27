@@ -19,8 +19,8 @@ public class OrderService {
     private final UserService userService;
     private final ProductService productService;
 
-    private void createOrder(Long userId, List<ProductEntity> products) {
-        UserEntity user = userService.findUserById(userId);
+    public void createOrder(UserEntity userId, List<ProductEntity> products) {
+        UserEntity user = userService.findUserById(userId.getId());
         BigDecimal totalValue = BigDecimal.ZERO;
 
         for (ProductEntity product : products) {
@@ -30,7 +30,7 @@ public class OrderService {
         OrderEntity order = OrderEntity.builder()
                 .totalValue(totalValue)
                 .orderDate(LocalDateTime.now())
-                .userId(user.getId())
+                .userId(user)
                 .products(products)
                 .build();
 
@@ -50,7 +50,7 @@ public class OrderService {
         orderRepository.deleteById(id);
     }
 
-    public void changeOrder(Long id, OrderEntity order) {
+    public void changeOrderById(Long id, OrderEntity order) {
         OrderEntity newOrder = findOrderById(id);
         order.setId(newOrder.getId());
 

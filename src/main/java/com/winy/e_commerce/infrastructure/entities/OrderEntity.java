@@ -28,7 +28,7 @@ public class OrderEntity {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private Long userId;
+    private UserEntity userId;
 
     @OneToOne
     @JoinColumn(name = "products")

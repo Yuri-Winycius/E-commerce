@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-
 public class ProductService {
 
     private final ProductRepository productRepository;
@@ -27,7 +26,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    public void changeProduct(Long id, ProductEntity product) {
+    public void changeProductById(Long id, ProductEntity product) {
         ProductEntity newProduct = findProductById(id);
         product.setId(newProduct.getId());
 

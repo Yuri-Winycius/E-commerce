@@ -6,10 +6,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -30,7 +26,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void changeUser(Long id, UserEntity user) {
+    public void changeUserById(Long id, UserEntity user) {
         UserEntity newUser = findUserById(id);
         user.setId(newUser.getId());
 
